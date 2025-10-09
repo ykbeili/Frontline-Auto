@@ -1,0 +1,90 @@
+<!-- app/views/dealers/index.html.erb -->
+<h1 class="mb-4">Dealers</h1>
+
+<% @dealers.each do |dealer| %>
+  <section class="dealer mb-8">
+    <h2>
+      <%= dealer.name %>
+      <small style="font-weight: normal; color:#666">
+        (<%= dealer.users.size %> users, <%= dealer.vehicles.size %> vehicles)
+      </small>
+    </h2>
+
+    <!-- Users table -->
+    <h3 class="mt-3">Users</h3>
+    <% if dealer.users.any? %>
+      <table border="1" cellpadding="6" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% dealer.users.each do |u| %>
+            <tr>
+              <td><%= u.name.presence || "—" %></td>
+              <td><%= u.email.presence || "—" %></td>
+              <td><%= u.role.presence || "—" %></td>
+              <td><%= u.created_at&.strftime("%Y-%m-%d") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>No users yet.</p>
+    <% end %>
+
+    <!-- Vehicles table -->
+    <h3 class="mt-5">Vehicles</h3>
+    <% if dealer.vehicles.any? %>
+      <table border="1" cellpadding="6" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Trim</th>
+            <th>VIN</th>
+            <th>Stock #</th>
+            <th>Status</th>
+            <th>Recon State</th>
+            <th>Source</th>
+            <th>Drivetrain</th>
+            <th>Transmission</th>
+            <th>Fuel</th>
+            <th>Engine</th>
+            <th>Cyl</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% dealer.vehicles.order(created_at: :desc).each do |v| %>
+            <tr>
+              <td><%= v.year %></td>
+              <td><%= v.make %></td>
+              <td><%= v.model %></td>
+              <td><%= v.trim %></td>
+              <td><%= v.vin %></td>
+              <td><%= v.stock_no %></td>
+              <td><%= v.status %></td>
+              <td><%= v.recon_state %></td>
+              <td><%= v.source %></td>
+              <td><%= v.drivetrain %></td>
+              <td><%= v.transmission %></td>
+              <td><%= v.fuel %></td>
+              <td><%= v.engine %></td>
+              <td><%= v.cylinders %></td>
+              <td><%= v.created_at&.strftime("%Y-%m-%d") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>No vehicles yet.</p>
+    <% end %>
+  </section>
+  <hr/>
+<% end %>
