@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 1
+  make: MyString
+  model: MyString
+  trim: MyString
+  vin: MyString
+  stock_no: MyString
+  status: MyString
+  recon_state: MyString
+  source: MyString
+  drivetrain: MyString
+  transmission: MyString
+  fuel: MyString
+  engine: MyString
+  cylinders: 1
+
+two:
+  year: 1
+  make: MyString
+  model: MyString
+  trim: MyString
+  vin: MyString
+  stock_no: MyString
+  status: MyString
+  recon_state: MyString
+  source: MyString
+  drivetrain: MyString
+  transmission: MyString
+  fuel: MyString
+  engine: MyString
+  cylinders: 1
