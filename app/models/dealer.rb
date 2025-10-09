@@ -1,3 +1,4 @@
 class Dealer < ApplicationRecord
-  has_many :vehicles
+  has_many :users, dependent: :destroy
+  has_many :vehicles, dependent: :destroy
 end
