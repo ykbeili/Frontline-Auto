@@ -1,24 +1,5 @@
-# README
+# Frontline Auto
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## From intake to live, faster.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Frontline Auto is a Rails application that orchestrates Recon & Make-Ready for used vehicles at dealerships. It coordinates the journey from Intake → Inspection → Parts → Service → Detail → Photo → Live, with SLA timers, checklists, parts ETAs, alerts, and a publish gate—so vehicles hit the lot faster with consistent media quality.
