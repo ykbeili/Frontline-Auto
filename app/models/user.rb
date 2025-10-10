@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  belongs_to :dealer
-  enum :role, { staff: "staff", manager: "manager" }
+  has_and_belongs_to_many :dealer
+  enum :role, { staff: "staff", manager: "manager", owner: "owner" }
 end
