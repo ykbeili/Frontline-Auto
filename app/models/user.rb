@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_and_belongs_to_many :dealer
+  has_and_belongs_to_many :dealers
   enum :role, { staff: "staff", manager: "manager", owner: "owner" }
   attr_accessor :dealer_name
 end
