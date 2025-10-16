@@ -12,7 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       raise ActiveRecord::RecordInvalid.new(Dealer.new), "Dealer name can't be blank" if dealer_name.blank?
 
       dealer = Dealer.create!(name: dealer_name)
-      build_resource(sign_up_params) # build Devise user
+      build_resource(sign_up_params)
+      resource.role = "owner"
       resource.dealers << dealer
       resource.save!
       yield resource if block_given?

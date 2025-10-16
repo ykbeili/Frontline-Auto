@@ -4,6 +4,11 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div>
+    <%= f.label :name, "Full Name" %><br>
+    <%= f.text_field :name, value: resource.name, required: true, autofocus: true %>
+  </div>
+
+  <div>
     <%= f.label :dealer_name, "Dealer name" %><br>
     <%= f.text_field :dealer_name, value: resource.dealer_name, required: true, autofocus: true %>
   </div>

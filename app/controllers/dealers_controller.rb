@@ -1,5 +1,5 @@
 class DealersController < ApplicationController
   def index
-    @dealers = Dealer.includes(:users, :vehicles).order(:name)
+    @dealers = current_user.dealers.order(:name)
   end
 end

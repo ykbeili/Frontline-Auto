@@ -4,7 +4,7 @@
 <% @dealers.each do |dealer| %>
   <section class="dealer mb-8">
     <h2>
-      <%= dealer.name %>
+      Dealer Name: <%= dealer.name %>
       <small style="font-weight: normal; color:#666">
         (<%= dealer.users.size %> users, <%= dealer.vehicles.size %> vehicles)
       </small>
