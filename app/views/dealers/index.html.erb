@@ -1,5 +1,6 @@
 <!-- app/views/dealers/index.html.erb -->
 <h1 class="mb-4">Dealers</h1>
+<%= link_to "Create a dealer", new_dealer_path if current_user.owner? %>
 
 <% @dealers.each do |dealer| %>
   <section class="dealer mb-8">
@@ -33,8 +34,10 @@
           <% end %>
         </tbody>
       </table>
+      <%= link_to "Add a User", new_dealer_user_path(dealer.id) if current_user.owner? %>
     <% else %>
       <p>No users yet.</p>
+      <%= link_to "Add a User", new_dealer_user_path(dealer.id) if current_user.owner? %>
     <% end %>
 
     <!-- Vehicles table -->

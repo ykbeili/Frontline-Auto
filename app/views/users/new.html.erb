@@ -1,0 +1,16 @@
+<h2>Create a User</h2>
+
+<%= form_with model: @dealer, local: true do |f| %>
+  <%= render "users/shared/error_messages", resource: @dealer %>
+
+  <div>
+    <%= f.label :name, "Full Name" %><br>
+    <%= f.text_field :name, value: @dealer.name, required: true, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>
+
+<%#= render "users/shared/links" %>
