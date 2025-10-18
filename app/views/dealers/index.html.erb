@@ -34,10 +34,10 @@
           <% end %>
         </tbody>
       </table>
-      <%= link_to "Add a User", new_dealer_user_path(dealer.id) if current_user.owner? %>
+      <%= link_to "Invite a User", new_dealer_users_invitation_path(dealer.id) if current_user.owner? %>
     <% else %>
       <p>No users yet.</p>
-      <%= link_to "Add a User", new_dealer_user_path(dealer.id) if current_user.owner? %>
+      <%= link_to "Invite a User", new_dealer_users_invitation_path(dealer.id) if current_user.owner? %>
     <% end %>
 
     <!-- Vehicles table -->

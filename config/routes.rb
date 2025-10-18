@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   resources :dealers do
     resources :users
   end
+  devise_scope :user do
+    get  "dealers/:dealer_id/users/invitations/new",
+         to: "users/invitations#new",   as: :new_dealer_users_invitation
+    post "dealers/:dealer_id/users/invitations",
+         to: "users/invitations#create", as: :dealer_users_invitations
+  end
 end

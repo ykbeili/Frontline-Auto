@@ -1,0 +1,7 @@
+<h1>Invite user to <%= @dealer.name %></h1>
+<%= form_with model: @user, url: dealer_users_invitations_path(@dealer), local: true do |f| %>
+  <div><%= f.label :email %><br><%= f.email_field :email, required: true, autofocus: true %></div>
+  <div><%= f.label :name, "(optional)" %><br><%= f.text_field :name %></div>
+  <div><%= f.label :role %><br><%= f.select :role, User.roles.keys, selected: "staff" %></div>
+  <div style="margin-top:1rem"><%= f.submit "Send invitation" %></div>
+<% end %>
