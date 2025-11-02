@@ -42,6 +42,7 @@
 
     <!-- Vehicles table -->
     <h3 class="mt-5">Vehicles</h3>
+    <%= link_to "Add A vehicle", new_dealer_vehicle_path(dealer) if current_user.owner? %>
     <% if dealer.vehicles.any? %>
       <table border="1" cellpadding="6" cellspacing="0" width="100%">
         <thead>

@@ -1,0 +1,11 @@
+<h1>Add A Vehicles</h1>
+<%= form_with model: [@dealer, @vehicle], local: true, local: true do |f| %>
+  <div><%= f.label :year, "year" %><br><%= f.text_field :year %></div>
+  <div><%= f.label :make, "make" %><br><%= f.text_field :make %></div>
+  <div><%= f.label :model, "model" %><br><%= f.text_field :model %></div>
+  <div><%= f.label :trim, "trim" %><br><%= f.text_field :trim %></div>
+  <div><%= f.label :vin, "vin" %><br><%= f.text_field :vin %></div>
+  <div><%= f.label :stock_no, "stock no" %><br><%= f.text_field :stock_no %></div>
+  <div><%= f.label :status, "status" %><br><%= f.text_field :status %></div>
+  <div style="margin-top:1rem"><%= f.submit "Add A Vehicle" %></div>
+<% end %>

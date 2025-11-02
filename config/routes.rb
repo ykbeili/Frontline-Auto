@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root "dealers#index"
   resources :dealers do
     resources :users
+    resources :vehicles
   end
   devise_scope :user do
     get  "dealers/:dealer_id/users/invitations/new",
